@@ -4,9 +4,6 @@ on:
   push:
     branches:
 
-permissions:
-  contents: write
-
 jobs:
   format:
     name: Prettier

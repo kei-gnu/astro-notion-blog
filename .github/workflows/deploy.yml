@@ -5,10 +5,6 @@ on:
    - cron: '0 * * * *' # every hour
   workflow_dispatch:
 
-permissions:
-  actions: write
-  contents: write
-
 jobs:
   curl:
     name: Kick deploy hook

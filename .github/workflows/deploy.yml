@@ -1,6 +1,9 @@
 name: Deploy
 
 on:
+  pull_request:
+    branches:
+      - main
   schedule:
    - cron: '0 * * * *' # every hour
   workflow_dispatch:

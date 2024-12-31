@@ -4,12 +4,15 @@ on:
   pull_request:
     branches:
       - main
+    types:
+      - closed
   schedule:
    - cron: '0 * * * *' # every hour
   workflow_dispatch:
 
 jobs:
   curl:
+    if: github.event.pull_request.merged == true || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     name: Kick deploy hook
     runs-on: ubuntu-latest
     steps:
